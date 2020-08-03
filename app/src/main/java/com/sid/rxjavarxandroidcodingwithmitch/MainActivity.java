@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.util.concurrent.TimeUnit;
+
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -59,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
         //-----3 Observable using create() operator: Creating an Observable from a list of objects
 
-       /* Observable<Task> taskListObservable = Observable
+        Observable<Task> taskListObservable = Observable
                 .create(new ObservableOnSubscribe<Task>() {
                     @Override
                     public void subscribe(ObservableEmitter<Task> emitter) throws Exception {
@@ -74,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
                 .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread());*/
+                .observeOn(AndroidSchedulers.mainThread());
 
         //-----4 Observable using just() operator
 
@@ -136,9 +138,45 @@ public class MainActivity extends AppCompatActivity {
         });*/
         //---End--5 Observable using range() operator
 
+        //-----6 Observable using interval() operator
+       /* Observable<Long> intervalObservable = Observable
+                .interval(2, TimeUnit.SECONDS)
+                .subscribeOn(Schedulers.io())
+                .takeWhile(new Predicate<Long>() {
+                    @Override
+                    public boolean test(Long aLong) throws Exception {
+                        return aLong <= 10;
+                    }
+                })
+                .observeOn(AndroidSchedulers.mainThread());
+
+        intervalObservable.subscribe(new Observer<Long>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(Long aLong) {
+                Log.d(TAG, "onNext..."+aLong);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });*/
+
+        //--End---6 Observable using interval() operator
+
 
         // Observer
-      /*  taskListObservable.subscribe(new Observer<Task>() {
+        taskListObservable.subscribe(new Observer<Task>() {
             @Override
             public void onSubscribe(@NonNull Disposable d) {
                // Log.i(TAG, "onSubscribe called");
@@ -160,7 +198,43 @@ public class MainActivity extends AppCompatActivity {
             public void onComplete() {
 
             }
-        });*/
+        });
+
+        //-----7 Observable using fromArray() operator
+        Task[] list = new Task[5];
+        list[0] = (new Task("Take out the trash", true, 3));
+        list[1] = (new Task("Walk the dog", false, 2));
+        list[2] = (new Task("Make my bed", true, 1));
+        list[3] = (new Task("Unload the dishwasher", false, 0));
+        list[4] = (new Task("Make dinner", true, 5));
+
+        Observable<Task> arrayTaskObservable = Observable
+                .fromArray(list)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+
+        arrayTaskObservable.subscribe(new Observer<Task>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(Task task) {
+                Log.d(TAG,"onNext..."+task.getDescription());
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+        //--End---7 Observable using fromArray() operator
     }
 
     @Override
