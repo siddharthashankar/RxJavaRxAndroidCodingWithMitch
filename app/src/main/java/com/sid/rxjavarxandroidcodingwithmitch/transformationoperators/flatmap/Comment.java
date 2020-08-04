@@ -1,4 +1,4 @@
-package com.sid.rxjavarxandroidcodingwithmitch.transformationoperators;
+package com.sid.rxjavarxandroidcodingwithmitch.transformationoperators.flatmap;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

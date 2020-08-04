@@ -1,4 +1,4 @@
-package com.sid.rxjavarxandroidcodingwithmitch.transformationoperators;
+package com.sid.rxjavarxandroidcodingwithmitch.transformationoperators.flatmap;
 
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;

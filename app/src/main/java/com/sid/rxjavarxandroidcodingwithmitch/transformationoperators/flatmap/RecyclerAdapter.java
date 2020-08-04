@@ -1,4 +1,4 @@
-package com.sid.rxjavarxandroidcodingwithmitch.transformationoperators;
+package com.sid.rxjavarxandroidcodingwithmitch.transformationoperators.flatmap;
 
 import android.view.LayoutInflater;
 import android.view.View;
