@@ -11,10 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".transformationoperators.BufferActivity"></activity>
         <activity android:name=".frompublisher.Main2Activity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".transformationoperators.TransformationOperatorActivity"/>
-        <activity android:name=".transformationoperators.BufferActivity">
+        <activity android:name=".transformationoperators.MapOperatorActivity" />
+        <activity android:name=".transformationoperators.FlatMapOperatorActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

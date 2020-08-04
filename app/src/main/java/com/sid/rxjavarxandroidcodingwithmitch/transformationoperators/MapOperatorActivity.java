@@ -16,8 +16,8 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
-public class TransformationOperatorActivity extends AppCompatActivity {
-private String TAG = TransformationOperatorActivity.class.getSimpleName();
+public class MapOperatorActivity extends AppCompatActivity {
+private String TAG = MapOperatorActivity.class.getSimpleName();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

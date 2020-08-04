@@ -28,6 +28,7 @@ dependencies {
     def rxandroid_version = '2.1.1'
     def lifecycle_version = "1.1.1"
     def rxbinding_version = "3.0.0-alpha2"
+    def recyclerview_version = "1.0.0"
 
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.1.0'
@@ -58,6 +59,9 @@ dependencies {
 
 // Rx Binding Library
     implementation "com.jakewharton.rxbinding3:rxbinding:$rxbinding_version"
+
+    // Recyclerview
+    implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
 
 
 }
