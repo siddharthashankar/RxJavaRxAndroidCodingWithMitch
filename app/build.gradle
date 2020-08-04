@@ -27,6 +27,7 @@ dependencies {
     def rxjava_version = '2.2.7'
     def rxandroid_version = '2.1.1'
     def lifecycle_version = "1.1.1"
+    def rxbinding_version = "3.0.0-alpha2"
 
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.1.0'
@@ -53,6 +54,10 @@ dependencies {
 
 // Convert Observable to LiveData
     implementation "android.arch.lifecycle:reactivestreams:1.1.1"
+
+
+// Rx Binding Library
+    implementation "com.jakewharton.rxbinding3:rxbinding:$rxbinding_version"
 
 
 }
